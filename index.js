@@ -7,7 +7,7 @@ const sqlite3 = require('sqlite3').verbose();
 
 require('./startup/logging')();
 require('./startup/routes')(app);
-// const db = require('./startup/db')();
+// require('./startup/db')();
 
 
 

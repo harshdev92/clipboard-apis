@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
     const { error } = validate(req.body); // result.error
     if (error) return res.status(400).send(error.details[0].message);
 
-    let db = new sqlite3.Database('./db.sqlite3', (err) => {
+    let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);
         }
@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
     });
 
     
-    db.run(`CREATE TABLE IF NOT EXISTS employees (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)`, (err) => {
+    db.run(`CREATE TABLE IF NOT EXISTS employees (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, salary TEXT, currency TEXT, department TEXT, sub_department TEXT, on_contract TEXT )`, (err) => {
         if (err) {
             winston.error(err.message);
         }
@@ -24,22 +24,30 @@ router.post('/', async (req, res) => {
     });
 
 
-    let sql = `INSERT INTO employees (name) VALUES(?)`;
-    db.run(sql, [req.body.name], function(err) {
+    let sql = `INSERT INTO employees(name, salary, currency, department, on_contract, sub_department) VALUES(?,?,?,?,?,?)`;
+    
+    db.run(sql, [req.body.name, req.body.salary, req.body.currency, req.body.department, req.body.on_contract, req.body.sub_department], function(err) {
         if (err) {
             return winston.error(err.message);
         }
+        // get the last insert id
+        res.send(`A row has been inserted with rowid ${this.lastID}`);
         winston.info(`A row has been inserted with rowid ${this.lastID}`);
     });
+    
 
-    db.close();
-    res.send(req.body);
-
+    // close the database connection
+    db.close((err) => {
+        if (err) {
+            winston.error(err.message);
+        }
+        winston.info('Close the database connection.');
+    });
 });
 
 
 router.get('/', async (req, res) => {
-    let db = new sqlite3.Database('./db.sqlite3', (err) => {
+    let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);
         }
@@ -53,7 +61,13 @@ router.get('/', async (req, res) => {
         res.send(rows);
     });
 
-    db.close();
+     // close the database connection
+    db.close((err) => {
+        if (err) {
+            winston.error(err.message);
+        }
+        winston.info('Close the database connection.');
+    });
 });
 
 

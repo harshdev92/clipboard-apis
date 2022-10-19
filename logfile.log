@@ -405,3 +405,170 @@
 {"level":"info","message":"Connected to the employee database."}
 {"level":"info","message":"Created table employees"}
 {"level":"info","message":"A row has been inserted with rowid 9"}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"error","message":"SQLITE_ERROR: no such table: employees"}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"A row has been inserted with rowid 1"}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"error","message":"SQLITE_ERROR: no such table: employees"}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"A row has been inserted with rowid 1"}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"A row has been inserted with rowid 2"}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"A row has been inserted with rowid 3"}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"error","message":"SQLITE_ERROR: table employees has no column named currency"}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"error","message":"SQLITE_ERROR: no such table: employees"}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"error","message":"SQLITE_RANGE: column index out of range"}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"error","message":"SQLITE_RANGE: column index out of range"}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"error","message":"SQLITE_RANGE: column index out of range"}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"error","message":"SQLITE_ERROR: no such table: employees"}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"error","message":"SQLITE_RANGE: column index out of range"}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"A row has been inserted with rowid 1"}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"A row has been inserted with rowid 3"}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"error","message":"db.run is not a function db.run is not a function","stack":"TypeError: db.run is not a function\n    at D:\\clipboard-assignment\\routes\\employes.js:12:8\n    at newFn (D:\\clipboard-assignment\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (D:\\clipboard-assignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (D:\\clipboard-assignment\\node_modules\\express\\lib\\router\\route.js:144:13)\n    at Route.dispatch (D:\\clipboard-assignment\\node_modules\\express\\lib\\router\\route.js:114:3)\n    at newFn (D:\\clipboard-assignment\\node_modules\\express-async-errors\\index.js:16:20)\n    at Layer.handle [as handle_request] (D:\\clipboard-assignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at D:\\clipboard-assignment\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (D:\\clipboard-assignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (D:\\clipboard-assignment\\node_modules\\express\\lib\\router\\index.js:280:10)"}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"A row has been inserted with rowid 4"}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"error","message":"SQLITE_ERROR: no such table: employees"}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"A row has been inserted with rowid 1"}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"error","message":"SQLITE_ERROR: no such table: employees"}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"Close the database connection."}
+{"level":"error","message":"SQLITE_MISUSE: Database is closed"}
+{"level":"info","message":"Created table employees"}
+{"level":"error","message":"SQLITE_MISUSE: Database is closed"}
+{"level":"error","message":"SQLITE_MISUSE: Database is closed"}
+{"level":"info","message":"Close the database connection."}
+{"level":"error","message":"SQLITE_MISUSE: Database is closed"}
+{"level":"info","message":"Created table employees"}
+{"level":"error","message":"SQLITE_MISUSE: Database is closed"}
+{"level":"error","message":"SQLITE_MISUSE: Database is closed"}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"A row has been inserted with rowid 1"}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"A row has been inserted with rowid 2"}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Close the database connection."}

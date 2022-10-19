@@ -18,14 +18,14 @@ const server = app.listen(port, () => winston.info(`Listening on port ${port}...
 module.exports = server;
 
 
-sqlite3.verbose();
-const db = new sqlite3.Database('./db.sqlite3', (err) => {
-    if (err) {
-        winston.error(err.message);
-    }
-    winston.info('Connected to the employee database.');
-}
-);
+// sqlite3.verbose();
+// const db = new sqlite3.Database('./db.sqlite3', (err) => {
+//     if (err) {
+//         winston.error(err.message);
+//     }
+//     winston.info('Connected to the employee database.');
+// }
+// );
 
 // db.serialize(() => {
 //     db.run(`CREATE TABLE IF NOT EXISTS employees (

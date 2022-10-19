@@ -4,6 +4,7 @@ const { validate } = require('../validations/employee');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();   
 
+
 router.post('/', async (req, res) => {  
     const { error } = validate(req.body); // result.error
     if (error) return res.status(400).send(error.details[0].message);
@@ -62,6 +63,31 @@ router.get('/', async (req, res) => {
     });
 
      // close the database connection
+    db.close((err) => {
+        if (err) {
+            winston.error(err.message);
+        }
+        winston.info('Close the database connection.');
+    });
+});
+
+
+router.delete('/:id', async (req, res) => {
+    let db = new sqlite3.Database('./employees.sqlite3', (err) => {
+        if (err) {
+            winston.error(err.message);
+        }
+        winston.info('Connected to the employee database.');
+    });
+
+    db.run(`DELETE FROM employees WHERE id = ?`, [req.params.id], function(err) {
+        if (err) {
+            return winston.error(err.message);
+        }
+        res.send(`Row(s) deleted ${this.changes}`);
+    });
+
+    // close the database connection
     db.close((err) => {
         if (err) {
             winston.error(err.message);

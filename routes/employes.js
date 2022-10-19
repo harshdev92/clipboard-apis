@@ -97,6 +97,112 @@ router.delete('/:id', async (req, res) => {
 });
 
 
+router.get('/salaries', async (req, res) => {
+    let db = new sqlite3.Database('./employees.sqlite3', (err) => {
+        if (err) {
+            winston.error(err.message);
+        }
+        winston.info('Connected to the employee database.');
+    });
+
+    db.all(`SELECT AVG(salary) AS mean, MAX(salary) AS max, MIN(salary) AS min FROM employees`, [], (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        res.send(rows);
+    });
+
+
+    // close the database connection
+    db.close((err) => {
+        if (err) {
+            winston.error(err.message);
+        }
+        winston.info('Close the database connection.');
+    });
+});
+
+
+router.get('/salaries/:department', async (req, res) => {
+    let db = new sqlite3.Database('./employees.sqlite3', (err) => {
+        if (err) {
+            winston.error(err.message);
+        }
+        winston.info('Connected to the employee database.');
+    });
+
+    db.all(`SELECT AVG(salary) AS mean, MAX(salary) AS max, MIN(salary) AS min FROM employees WHERE department = ?`, [req.params.department], (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        res.send(rows);
+    });
+
+
+    // close the database connection
+    db.close((err) => {
+        if (err) {
+            winston.error(err.message);
+        }
+        winston.info('Close the database connection.');
+    });
+
+});
+
+
+router.get('/contractsalaries', async (req, res) => {
+    let db = new sqlite3.Database('./employees.sqlite3', (err) => {
+        if (err) {
+            winston.error(err.message);
+        }
+        winston.info('Connected to the employee database.');
+    });
+
+  db.all(`SELECT AVG(salary) AS mean, MAX(salary) AS max, MIN(salary) AS min FROM employees WHERE on_contract = 'true'`, [], (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        res.send(rows);
+    });
+
+
+
+    // close the database connection
+    db.close((err) => {
+        if (err) {
+            winston.error(err.message);
+        }
+        winston.info('Close the database connection.');
+    });
+
+});
+
+
+router.get('/salaries/:department/:subdepartment', async (req, res) => {
+    let db = new sqlite3.Database('./employees.sqlite3', (err) => {
+        if (err) {
+            winston.error(err.message);
+        }
+        winston.info('Connected to the employee database.');
+    });
+
+    db.all(`SELECT AVG(salary) AS mean, MAX(salary) AS max, MIN(salary) AS min FROM employees WHERE on_contract = 'true' AND department = ? AND sub_department = ?`, [req.params.department, req.params.subdepartment], (err, rows) => {
+        if (err) {
+            throw err;
+        }
+        res.send(rows);
+    });
+
+
+    // close the database connection
+    db.close((err) => {
+        if (err) {
+            winston.error(err.message);
+        }
+        winston.info('Close the database connection.');
+    });
+
+});
     
 module.exports = router;
 

@@ -172,3 +172,20 @@
 {"level":"info","message":"Listening on port 3000..."}
 {"level":"info","message":"Listening on port 3000..."}
 {"level":"info","message":"Listening on port 3000..."}
+{"level":"error","message":"SQLITE_CANTOPEN: unable to open database file"}
+{"level":"info","message":"Connected to the test database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"error","message":"SQLITE_CANTOPEN: unable to open database file"}
+{"level":"info","message":"Connected to the test database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the test database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the test database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the test database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the test database."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Listening on port 3000..."}

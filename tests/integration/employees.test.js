@@ -159,54 +159,5 @@ describe('/api/employees', () => {
     });
 
   });
-
-
-
-  // describe('DELETE /:id', () => {
- 
-
-  //  afterEach(async () => { 
-  //    return clean();
-  //  });
- 
-  //   it('should return 401 if client is not logged in', async () => {
-  //     token = ''; 
-
-  //     const res = await execDelete();
-
-  //     expect(res.status).toBe(401);
-  //   });
-
-
-  //   it('should return 400 if id is invalid', async () => {
-  //     id = 'test'; 
-      
-  //     const res = await execDelete();
-
-  //     expect(res.status).toBe(400);
-  //   });
-
-  //   // it('should return 404 if no employee with the given id was found', async () => {
-  //   //   id = 1000;
-  //   //   const res = await exec();
-
-  //   //   expect(res.status).toBe(404);
-  //   // });
-
-  //   // it('should delete the genre if input is valid', async () => {
-  //   //   await exec();
-
-  //   //   const genreInDb = await Genre.findById(id);
-
-  //   //   expect(genreInDb).toBeNull();
-  //   // });
-
-  //   // it('should return the removed genre', async () => {
-  //   //   const res = await exec();
-
-  //   //   expect(res.body).toHaveProperty('_id', genre._id.toHexString());
-  //   //   expect(res.body).toHaveProperty('name', genre.name);
-  //   // });
-  // });  
    
 });

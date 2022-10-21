@@ -1,7 +1,7 @@
 const express = require('express');
 const winston = require('winston');
 const bcrypt = require('bcrypt');
-const { validate } = require('../validations/user');
+const Joi = require('joi');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();   
 
@@ -29,17 +29,18 @@ router.post('/', async (req, res) => {
         if (err) {
             throw err;
         }
-        if (row) {
-            return res.status(400).send('User already registered.');
+        if (!row) {
+            return res.status(400).send('Invalid email or password.');
         } else {
-            let sql = `INSERT INTO users(name, email, password, isAdmin) VALUES(?,?,?,?)`;
-            const salt = bcrypt.genSaltSync(10);
-            const hash = bcrypt.hashSync(req.body.password, salt);
-            db.run(sql, [req.body.name, req.body.email, hash, req.body.isAdmin], function(err) {
+            bcrypt.compare(req.body.password, row.password, function(err, result) {
                 if (err) {
                     return winston.error(err.message);
                 }
-                res.send('User registered');
+                if (result) {
+                    res.send('Login successful');
+                } else {
+                    res.send('Login failed');
+                }
             });
         }
     });
@@ -56,6 +57,14 @@ router.post('/', async (req, res) => {
     );  
 });
 
+
+function validate(user) {
+    const schema = Joi.object({
+        email: Joi.string().min(5).max(255).required().email(),
+        password: Joi.string().min(5).max(255).required(),
+    });
+    return schema.validate(user);
+}
 
 module.exports = router;
 

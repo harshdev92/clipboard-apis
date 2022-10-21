@@ -49,7 +49,7 @@ describe('auth middleware', () => {
     return request(server)
       .post('/api/employees')
       .set('x-auth-token', token)
-      .send({ name: 'victornew', salary: '1234', currency: 'test', department: 'test', sub_department: 'test' });
+      .send({ name: 'test', salary: '1234', currency: 'test', department: 'test', sub_department: 'test' });
   }
 
   beforeEach(() => {

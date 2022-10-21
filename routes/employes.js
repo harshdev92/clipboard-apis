@@ -1,6 +1,6 @@
 const express = require('express');
 const winston = require('winston');
-const { validate } = require('../validations/employee');
+const { validate, validateId } = require('../validations/employee');
 const router = express.Router();
 const auth = require('../middleware/auth');
 const asyncMiddleWare = require('../middleware/async');
@@ -75,6 +75,8 @@ router.get('/', auth, asyncMiddleWare(async (req, res) => {
 
 
 router.delete('/:id', auth, asyncMiddleWare(async (req, res) => {
+    const { error } = validateId(req.params.id); // result.error
+    if (error) return res.status(400).send(error.details[0].message);
     let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);

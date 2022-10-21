@@ -3,6 +3,8 @@ const winston = require('winston');
 const bcrypt = require('bcrypt');
 const { validate } = require('../validations/user');
 const router = express.Router();
+const jsonwebtoken = require('jsonwebtoken');
+const config = require('config');
 const sqlite3 = require('sqlite3').verbose();   
 
 
@@ -39,7 +41,9 @@ router.post('/', async (req, res) => {
                 if (err) {
                     return winston.error(err.message);
                 }
-                res.send('User registered');
+                const token = jsonwebtoken.sign({id: this.lastID, isAdmin: req.body.isAdmin}, config.get('jwtPrivateKey'));
+
+                res.header('x-auth-token', token).send({id: this.lastID, name: req.body.name, email: req.body.email, isAdmin: req.body.isAdmin});
             });
         }
     });

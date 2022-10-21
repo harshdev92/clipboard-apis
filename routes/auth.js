@@ -3,8 +3,9 @@ const winston = require('winston');
 const bcrypt = require('bcrypt');
 const Joi = require('joi');
 const router = express.Router();
+const jsonwebtoken = require('jsonwebtoken');
+const config = require('config');
 const sqlite3 = require('sqlite3').verbose();   
-
 
 router.post('/', async (req, res) => {  
     const { error } = validate(req.body); // result.error
@@ -37,9 +38,14 @@ router.post('/', async (req, res) => {
                     return winston.error(err.message);
                 }
                 if (result) {
-                    res.send('Login successful');
+                    jsonwebtoken.sign({id: row.id, isAdmin: row.isAdmin}, config.get('jwtPrivateKey'), (err, token) => {
+                        if (err) {
+                            return winston.error(err.message);
+                        }
+                        res.send(token);
+                    });
                 } else {
-                    res.send('Login failed');
+                    res.send('Invalid email or password.');
                 }
             });
         }

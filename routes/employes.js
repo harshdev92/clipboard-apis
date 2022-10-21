@@ -3,11 +3,11 @@ const winston = require('winston');
 const { validate } = require('../validations/employee');
 const router = express.Router();
 const auth = require('../middleware/auth');
-
+const asyncMiddleWare = require('../middleware/async');
 const sqlite3 = require('sqlite3').verbose();   
 
 
-router.post('/',auth, async (req, res) => {  
+router.post('/',auth, asyncMiddleWare(async (req, res) => {  
     const { error } = validate(req.body); // result.error
     if (error) return res.status(400).send(error.details[0].message);
 
@@ -46,10 +46,10 @@ router.post('/',auth, async (req, res) => {
         }
         winston.info('Close the database connection.');
     });
-});
+}));
 
 
-router.get('/', auth, async (req, res) => {
+router.get('/', auth, asyncMiddleWare(async (req, res) => {
     let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);
@@ -71,10 +71,10 @@ router.get('/', auth, async (req, res) => {
         }
         winston.info('Close the database connection.');
     });
-});
+}));
 
 
-router.delete('/:id', auth, async (req, res) => {
+router.delete('/:id', auth, asyncMiddleWare(async (req, res) => {
     let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);
@@ -96,10 +96,10 @@ router.delete('/:id', auth, async (req, res) => {
         }
         winston.info('Close the database connection.');
     });
-});
+}));
 
 
-router.get('/salaries',auth, async (req, res) => {
+router.get('/salaries',auth, asyncMiddleWare(async (req, res) => {
     let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);
@@ -122,10 +122,10 @@ router.get('/salaries',auth, async (req, res) => {
         }
         winston.info('Close the database connection.');
     });
-});
+}));
 
 
-router.get('/salaries/:department',auth, async (req, res) => {
+router.get('/salaries/:department',auth, asyncMiddleWare(async (req, res) => {
     let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);
@@ -149,10 +149,10 @@ router.get('/salaries/:department',auth, async (req, res) => {
         winston.info('Close the database connection.');
     });
 
-});
+}));
 
 
-router.get('/contractsalaries',auth, async (req, res) => {
+router.get('/contractsalaries',auth, asyncMiddleWare(async (req, res) => {
     let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);
@@ -177,10 +177,10 @@ router.get('/contractsalaries',auth, async (req, res) => {
         winston.info('Close the database connection.');
     });
 
-});
+}));
 
 
-router.get('/salaries/:department/:subdepartment', auth,async (req, res) => {
+router.get('/salaries/:department/:subdepartment', auth,asyncMiddleWare(async (req, res) => {
     let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);
@@ -204,7 +204,7 @@ router.get('/salaries/:department/:subdepartment', auth,async (req, res) => {
         winston.info('Close the database connection.');
     });
 
-});
+}));
     
 module.exports = router;
 

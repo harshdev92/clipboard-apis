@@ -7,7 +7,7 @@ function validateEmployee(employee) {
         salary: Joi.number().required(),
         currency: Joi.string().required(),
         department: Joi.string().required(),
-        on_contract: Joi.boolean(),
+        on_contract: Joi.boolean().default(false),
         sub_department: Joi.string().required()
     });
     

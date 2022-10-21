@@ -822,3 +822,48 @@
 {"level":"info","message":"Connected to the user database."}
 {"level":"info","message":"Created table users"}
 {"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the user database."}
+{"level":"info","message":"Created table users"}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Listening on port 3000..."}
+{"body":"{\r\n    \"name\" : \"test2\",\r\n    \"salary\": \"123\",\r\n    \r\n}","expose":true,"level":"error","message":"Unexpected token } in JSON at position 54 Unexpected token } in JSON at position 54","stack":"SyntaxError: Unexpected token } in JSON at position 54\n    at JSON.parse (<anonymous>)\n    at parse (D:\\clipboard-assignment\\node_modules\\body-parser\\lib\\types\\json.js:89:19)\n    at D:\\clipboard-assignment\\node_modules\\body-parser\\lib\\read.js:128:18\n    at AsyncResource.runInAsyncScope (async_hooks.js:193:9)\n    at invokeCallback (D:\\clipboard-assignment\\node_modules\\raw-body\\index.js:231:16)\n    at done (D:\\clipboard-assignment\\node_modules\\raw-body\\index.js:220:7)\n    at IncomingMessage.onEnd (D:\\clipboard-assignment\\node_modules\\raw-body\\index.js:280:7)\n    at IncomingMessage.emit (events.js:327:22)\n    at endReadableNT (_stream_readable.js:1327:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)","status":400,"statusCode":400,"type":"entity.parse.failed"}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Created table employees"}
+{"level":"info","message":"A row has been inserted with rowid 6"}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Close the database connection."}
+{"level":"info","message":"Listening on port 3000..."}
+{"level":"info","message":"Connected to the employee database."}
+{"level":"info","message":"Close the database connection."}

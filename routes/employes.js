@@ -2,10 +2,12 @@ const express = require('express');
 const winston = require('winston');
 const { validate } = require('../validations/employee');
 const router = express.Router();
+const auth = require('../middleware/auth');
+
 const sqlite3 = require('sqlite3').verbose();   
 
 
-router.post('/', async (req, res) => {  
+router.post('/',auth, async (req, res) => {  
     const { error } = validate(req.body); // result.error
     if (error) return res.status(400).send(error.details[0].message);
 
@@ -47,7 +49,7 @@ router.post('/', async (req, res) => {
 });
 
 
-router.get('/', async (req, res) => {
+router.get('/', auth, async (req, res) => {
     let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);
@@ -72,7 +74,7 @@ router.get('/', async (req, res) => {
 });
 
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
     let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);
@@ -97,7 +99,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 
-router.get('/salaries', async (req, res) => {
+router.get('/salaries',auth, async (req, res) => {
     let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);
@@ -123,7 +125,7 @@ router.get('/salaries', async (req, res) => {
 });
 
 
-router.get('/salaries/:department', async (req, res) => {
+router.get('/salaries/:department',auth, async (req, res) => {
     let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);
@@ -150,7 +152,7 @@ router.get('/salaries/:department', async (req, res) => {
 });
 
 
-router.get('/contractsalaries', async (req, res) => {
+router.get('/contractsalaries',auth, async (req, res) => {
     let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);
@@ -178,7 +180,7 @@ router.get('/contractsalaries', async (req, res) => {
 });
 
 
-router.get('/salaries/:department/:subdepartment', async (req, res) => {
+router.get('/salaries/:department/:subdepartment', auth,async (req, res) => {
     let db = new sqlite3.Database('./employees.sqlite3', (err) => {
         if (err) {
             winston.error(err.message);
@@ -186,7 +188,7 @@ router.get('/salaries/:department/:subdepartment', async (req, res) => {
         winston.info('Connected to the employee database.');
     });
 
-    db.all(`SELECT AVG(salary) AS mean, MAX(salary) AS max, MIN(salary) AS min FROM employees WHERE on_contract = 'true' AND department = ? AND sub_department = ?`, [req.params.department, req.params.subdepartment], (err, rows) => {
+    db.all(`SELECT AVG(salary) AS mean, MAX(salary) AS max, MIN(salary) AS min FROM employees WHERE department = ? AND sub_department = ?`, [req.params.department, req.params.subdepartment], (err, rows) => {
         if (err) {
             throw err;
         }

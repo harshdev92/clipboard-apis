@@ -11,7 +11,7 @@
 Clone the repo and install the dependencies.
 
 ```bash
-git clone 
+git clone https://github.com/harshdev92/clipboard-apis.git
 cd the-example-app.nodejs
 ```
 
@@ -40,7 +40,7 @@ You can also run this app as a Docker container:
 Step 1: Clone the repo
 
 ```bash
-git clone https://github.com/contentful/the-example-app.nodejs.git
+git clone https://github.com/harshdev92/clipboard-apis.git
 ```
 
 Step 2: Build the Docker image
